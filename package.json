@@ -1,33 +1,37 @@
 {
-  "name": "podcast-player",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.0.7",
-    "axios": "^1.7.9",
-    "dompurify": "^3.2.4",
-    "lodash": "^4.17.21",
-    "pinia": "^3.0.1",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0",
-    "xml2js": "^0.6.2"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.17.15",
-    "@types/xml2js": "^0.4.14",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "@vue/tsconfig": "^0.7.0",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^4.0.7",
-    "typescript": "~5.7.2",
-    "vite": "^6.1.0",
-    "vue-tsc": "^2.2.0"
-  }
+    "name": "podcast-player",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc -b && vite build",
+        "preview": "vite preview",
+        "test": "vitest",
+        "coverage": "vitest run --coverage"
+    },
+    "dependencies": {
+        "@tailwindcss/vite": "^4.0.7",
+        "axios": "^1.7.9",
+        "dompurify": "^3.2.4",
+        "lodash": "^4.17.21",
+        "pinia": "^3.0.1",
+        "vue": "^3.5.13",
+        "vue-router": "^4.5.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.5.14",
+        "@types/lodash": "^4.17.15",
+        "@vitejs/plugin-vue": "^5.2.1",
+        "@vue/test-utils": "^2.4.6",
+        "@vue/tsconfig": "^0.7.0",
+        "autoprefixer": "^10.4.20",
+        "happy-dom": "^17.1.8",
+        "postcss": "^8.5.3",
+        "tailwindcss": "^4.0.7",
+        "typescript": "~5.7.2",
+        "vite": "^6.1.0",
+        "vitest": "^3.0.7",
+        "vue-tsc": "^2.2.0"
+    }
 }
