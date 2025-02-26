@@ -1,26 +1,16 @@
 <template>
-	<div
-		class="playerbox fixed bottom-0 left-0 right-0 bg-[#242424] shadow-lg transition-transform duration-300"
+	<div class="playerbox fixed bottom-0 left-0 right-0 bg-[#242424] shadow-lg transition-transform duration-300"
 		:class="{
 			'translate-y-full': !openPlayer,
 			'translate-y-0': openPlayer,
-		}"
-	>
+		}">
 		<div class="mx-auto">
 			<!-- Seek Bar -->
 			<div class="flex flex-col items-center">
-				<input
-					type="range"
-					min="0"
-					:max="channelStore.selectedEpisode?.duration"
-					:value="playerStore.currentTime"
-					@input="handleSeek"
-					:disabled="!playerStore.currentEpisode"
-					class="overflow-hidden appearance-none bg-gray-100 w-full"
-				/>
-				<div
-					class="seek-bar-info flex justify-between text-sm text-gray-100 pt-1"
-				>
+				<input type="range" min="0" :max="channelStore.selectedEpisode?.duration"
+					:value="playerStore.currentTime" @input="handleSeek" :disabled="!playerStore.currentEpisode"
+					class="overflow-hidden appearance-none bg-gray-100 w-full" />
+				<div class="seek-bar-info flex justify-between text-sm text-gray-100 pt-1">
 					<span>{{ formatTime(playerStore.currentTime) }}</span>
 					&nbsp;/&nbsp;
 					<span>{{
@@ -32,20 +22,13 @@
 			<div class="max-w-4xl flex items-center gap-4 m-5">
 				<!-- Controls -->
 				<div class="flex items-center gap-4">
-					<button
-						class="btn-custom p-2 rounded-full border border-[#fff]"
-						@click="togglePlay"
-						:disabled="!playerStore.currentEpisode"
-					>
+					<button class="btn-custom p-2 rounded-full border border-[#fff]" @click="togglePlay"
+						:disabled="!playerStore.currentEpisode">
 						<span v-if="playerStore.isPlaying">
 							<PauseButton width="26px" height="26px" />
 						</span>
 						<span v-else>
-							<PlayButton
-								width="26px"
-								height="26px"
-								stroke-width="3"
-							/>
+							<PlayButton width="26px" height="26px" stroke-width="3" />
 						</span>
 					</button>
 				</div>
@@ -58,12 +41,8 @@
 			</div>
 
 			<!-- Hidden Audio Element -->
-			<audio
-				ref="audioEl"
-				:src="playerStore.currentEpisode?.audioUrl"
-				@timeupdate="handleTimeUpdate"
-				@ended="handleEnded"
-			></audio>
+			<audio ref="audioEl" :src="playerStore.currentEpisode?.audioUrl" @timeupdate="handleTimeUpdate"
+				@ended="handleEnded"></audio>
 		</div>
 	</div>
 </template>
@@ -126,7 +105,7 @@ watch(
 				audioEl.value?.pause();
 			}
 		}
-		
+
 	},
 	{ immediate: true }
 );
@@ -178,17 +157,21 @@ const togglePlay = () => {
 		box-shadow: -2005px 0 0 2000px #09cef6;
 		border-radius: 50%;
 	}
+
 	input[type="range"]:disabled {
 		opacity: 50%;
 	}
 }
+
 @media (prefers-color-scheme: light) {
 	.playerbox {
 		background-color: #ffffff;
 	}
+
 	button {
 		border-color: #242424;
 	}
+
 	.seek-bar-info {
 		color: #6a7282;
 	}

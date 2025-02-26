@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
 export interface Episode {
     guid: string; // 節目唯一識別碼
@@ -17,15 +17,15 @@ export interface Channel {
     episodes: Episode[]; // 集數列表
 }
 
-export const useChannelStore = defineStore('channel', {
+export const useChannelStore = defineStore("channel", {
     state: () => ({
         channel: {
-            imageUrl: '',
-            title: '',
-            episodes: []
+            imageUrl: "",
+            title: "",
+            episodes: [],
         } as Channel, // 頻道資訊
         selectedEpisodeIndex: null as string | null,
-        selectedEpisode: null as Episode | null
+        selectedEpisode: null as Episode | null,
     }),
     actions: {
         setChannel(channel: Channel) {
@@ -33,8 +33,10 @@ export const useChannelStore = defineStore('channel', {
         },
         setSelectedEpisodeIndex(guid: string | null) {
             this.selectedEpisodeIndex = guid;
-            this.selectedEpisode = guid !== null && this.channel.episodes.find(item => item.guid === guid) || null;
-            
-        }
+            this.selectedEpisode =
+                (guid !== null &&
+                    this.channel.episodes.find((item) => item.guid === guid)) ||
+                null;
+        },
     },
 });

@@ -30,10 +30,9 @@ onUnmounted(() => {
 </script>
 
 <template>
-	<div class="home-page">
-		<Header />
-		<EpisodeDescription />
-		<AudioPlayer />
-	</div>
+    <div class="home-page">
+        <Header />
+        <EpisodeDescription />
+        <AudioPlayer />
+    </div>
 </template>
-
