@@ -1,5 +1,24 @@
-# Vue 3 + TypeScript + Vite
+# Podcast Player
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 功能需求
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+1. 當使用者開啟 Home Page 時，可以看到該 RSS 內的所有 Episode。
+2. 當使用者點擊任一 Episode 時，會跳轉至 Episode Page，可以看到該 Episode 的完整資訊。
+3. 使用者在 Episode 頁面可以播放該集的內容。
+4. 使用者可以透過 Seek Bar 來控制播放進度。
+5. 若 Episode 有新的集數時，會自動接續播放，若無則會停止播放。
+
+## 啟動方式
+
+1. 安裝專案依賴：
+    ```bash
+    npm install
+    ```
+
+2. 啟動開發伺服器：
+    ```bash
+    npm run dev
+    ```
+
+3. 開啟瀏覽器並訪問 `http://localhost:3000` 查看應用程式。
+
